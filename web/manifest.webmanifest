@@ -1,0 +1,10 @@
+{
+  "name": "村莊勇者 序章試玩",
+  "short_name": "村莊勇者",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#0c0812",
+  "theme_color": "#7a5cc0",
+  "orientation": "portrait",
+  "icons": [{ "src": "icon.png", "sizes": "192x192", "type": "image/png" }]
+}

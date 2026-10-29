@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FAF9FD">
+<title>村莊勇者 — VN Demo</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="ui.css">
+</head>
+<body>
+<div id="stage">
+  <img id="bg" alt="">
+  <div id="sprites"></div>
+  <div id="flash"></div>
+
+  <div id="title" class="overlay">
+    <div class="t-block">
+      <p class="t-sub">雙界之痕 · 序章試玩</p>
+      <h1 class="t-main">村莊勇者</h1>
+      <div class="t-menu">
+        <button id="btn-start">開始故事</button>
+        <button id="btn-continue">繼續</button>
+        <button id="btn-config">設置</button>
+      </div>
+      <p class="t-note">7 結局 · 劇情向 Demo · 進度自動存於本裝置</p>
+    </div>
+  </div>
+
+  <div id="caption" class="overlay"><p id="caption-text"></p></div>
+
+  <div id="hud">
+    <button id="btn-menu" aria-label="選單">☰</button>
+    <span id="affection" title="親密度"></span>
+  </div>
+
+  <div id="dialog" tabindex="0">
+    <div id="nameplate"></div>
+    <p id="body"></p>
+    <span id="next-mark">▼</span>
+  </div>
+
+  <div id="choices"></div>
+
+  <div id="sysmenu" class="overlay hidden">
+    <div class="s-block">
+      <h2>選單</h2>
+      <button data-act="back">劇情回溯</button>
+      <button data-act="save">存檔</button>
+      <button data-act="load">讀檔</button>
+      <button data-act="cfg">設置</button>
+      <button data-act="title">回標題</button>
+      <button data-act="close">關閉</button>
+      <div id="ending-gallery"><h3>結局圖鑑</h3><div id="gallery-grid"></div></div>
+    </div>
+  </div>
+
+  <div id="backlog" class="overlay hidden"><div id="backlog-list"></div>
+    <button id="backlog-close">關閉</button></div>
+
+  <div id="cfg" class="overlay hidden">
+    <div class="s-block">
+      <h2>設置</h2>
+      <label>文字速度 <input id="cfg-speed" type="range" min="1" max="5" value="3"></label>
+      <label>Auto 間隔 <input id="cfg-auto" type="range" min="1" max="5" value="2"></label>
+      <button data-cfg="auto">Auto: 關</button>
+      <button data-cfg="skip">Skip: 只跳已讀</button>
+      <button data-cfg="sound">音效: 開</button>
+      <button id="cfg-close">關閉</button>
+    </div>
+  </div>
+
+  <div id="savegrid" class="overlay hidden"><div class="s-block" id="savebox"></div></div>
+  <div id="ending-screen" class="overlay hidden">
+    <div class="e-block"><p id="ending-kind"></p><h1 id="ending-name"></h1>
+      <p id="ending-note"></p>
+      <button id="btn-after-end">回到標題</button></div>
+  </div>
+</div>
+<script>if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));</script>
+<script src="story.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
